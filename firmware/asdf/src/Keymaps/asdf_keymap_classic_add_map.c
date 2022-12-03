@@ -5,7 +5,7 @@
 //
 // asdf_keymap_classic.c
 //
-// defines the keymap matrices used by the "classic" ADM 3A style keymap variants
+// defines the keymap matrices used by the "classic" ADM 3A style keymap variants (MCM/70 changes)
 //
 // Copyright 2019 David Fenyes
 //
