@@ -90,8 +90,8 @@ const FLASH classic_keycode_matrix_t classic_shift_matrix = {
   [3] = { ACTION_NOTHING, 'K', 'J', 'H', 'G', 'F', 'D', 'S' },
   [4] = { ACTION_NOTHING, 'I', 'U', 'Y', 'T', 'R', 'E', 'W' },
   [5] = { ACTION_NOTHING, ACTION_REPEAT, ACTION_CAPS, ASCII_CR, '{', 'O', 'L', '>' },
-  [6] = { ASCII_TILDE, ASCII_RT_CURLY_BRACE, ASCII_LT_CURLY_BRACE, '=', '*', ')',
-          ASCII_RT_PAREN, ASCII_LT_PAREN },
+  [6] = { ASCII_TILDE, ASCII_RT_CURLY_BRACE, ASCII_LT_CURLY_BRACE, '=', '*', ASCII_RT_PAREN,
+          ASCII_LT_PAREN, ASCII_LT_PAREN },
   [7] = { ASCII_GRAVE_ACCENT, ASCII_SINGLE_QUOTE, '&', '%', '$', '#', ASCII_DOUBLE_QUOTE, '!' },
   ASDF_CLASSIC_DIP_SWITCHES
 };
