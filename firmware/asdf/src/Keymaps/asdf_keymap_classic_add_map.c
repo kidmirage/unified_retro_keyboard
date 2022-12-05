@@ -70,29 +70,29 @@ typedef asdf_keycode_t classic_keycode_matrix_t[CLASSIC_NUM_ROWS][CLASSIC_NUM_CO
 
 const FLASH classic_keycode_matrix_t classic_plain_matrix = {
   [0] = { ACTION_NOTHING, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
-          ACTION_CTRL, ASCII_BACKSLASH },
+          ACTION_CTRL, ASCII_CR },
   [1] = { ASCII_DEL, 'p', ';', '/', ASCII_SPACE, 'z', 'a', 'q' },
   [2] = { CLASSIC_ACTION_BREAK, ASCII_COMMA, 'm', 'n', 'b', 'v', 'c', 'x' },
   [3] = { ACTION_NOTHING, 'k', 'j', 'h', 'g', 'f', 'd', 's' },
   [4] = { ACTION_NOTHING, 'i', 'u', 'y', 't', 'r', 'e', 'w' },
   [5] = { ACTION_NOTHING, ACTION_REPEAT, ACTION_CAPS, ASCII_CR, '[', 'o', 'l', ASCII_PERIOD },
-  [6] = { ASCII_TILDE, ASCII_RT_SQUARE_BRACE, ASCII_LT_SQUARE_BRACE, '-', ':', ASCII_ZERO, '9',
+  [6] = { ASCII_TILDE, ASCII_RT_SQUARE_BRACE, ASCII_BS, '=', '-', ASCII_ZERO, '9',
           '8' },
-  [7] = { ASCII_AT, '7', '6', '5', '4', '3', '2', '1' },
+  [7] = { ASCII_SINGLE_QUOTE, '7', '6', '5', '4', '3', '2', '1' },
   ASDF_CLASSIC_DIP_SWITCHES
 };
 
 const FLASH classic_keycode_matrix_t classic_shift_matrix = {
   [0] = { ACTION_NOTHING, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
-          ACTION_CTRL, ASCII_VERT_BAR },
-  [1] = { ASCII_DEL, 'P', '+', '?', ASCII_SPACE, 'Z', 'A', 'Q' },
+          ACTION_CTRL, ASCII_CR },
+  [1] = { ASCII_DEL, 'P', ':', '?', ASCII_SPACE, 'Z', 'A', 'Q' },
   [2] = { CLASSIC_ACTION_CLEAR, '<', 'M', 'N', 'B', 'V', 'C', 'X' },
   [3] = { ACTION_NOTHING, 'K', 'J', 'H', 'G', 'F', 'D', 'S' },
   [4] = { ACTION_NOTHING, 'I', 'U', 'Y', 'T', 'R', 'E', 'W' },
   [5] = { ACTION_NOTHING, ACTION_REPEAT, ACTION_CAPS, ASCII_CR, '{', 'O', 'L', '>' },
-  [6] = { ASCII_TILDE, ASCII_RT_CURLY_BRACE, ASCII_LT_CURLY_BRACE, '=', '*', ASCII_RT_PAREN,
-          ASCII_LT_PAREN, ASCII_LT_PAREN },
-  [7] = { ASCII_GRAVE_ACCENT, ASCII_SINGLE_QUOTE, '&', '%', '$', '#', ASCII_DOUBLE_QUOTE, '!' },
+  [6] = { ASCII_TILDE, ASCII_RT_CURLY_BRACE, ASCII_BS, '+', '_', ASCII_RT_PAREN,
+          ASCII_LT_PAREN, '*' },
+  [7] = { '"', '&', '^', '%', '$', '#', '@', '!' },
   ASDF_CLASSIC_DIP_SWITCHES
 };
 
