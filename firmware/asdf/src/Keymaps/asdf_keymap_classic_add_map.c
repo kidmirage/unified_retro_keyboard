@@ -69,8 +69,8 @@ typedef asdf_keycode_t classic_keycode_matrix_t[CLASSIC_NUM_ROWS][CLASSIC_NUM_CO
 
 
 const FLASH classic_keycode_matrix_t classic_plain_matrix = {
-  [0] = { ACTION_NOTHING, 128, 129, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
-          130, ASCII_BACKSLASH },
+  [0] = { ACTION_NOTHING, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
+         ACTION_CTRL, ASCII_BACKSLASH },
   [1] = { ASCII_DEL, 'p', ';', '/', ASCII_SPACE, 'z', 'a', 'q' },
   [2] = { CLASSIC_ACTION_BREAK, ASCII_COMMA, 'm', 'n', 'b', 'v', 'c', 'x' },
   [3] = { ACTION_NOTHING, 'k', 'j', 'h', 'g', 'f', 'd', 's' },
