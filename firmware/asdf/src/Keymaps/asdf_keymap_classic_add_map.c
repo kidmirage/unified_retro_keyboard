@@ -111,13 +111,16 @@ const FLASH classic_keycode_matrix_t classic_caps_matrix = {
 };
 
 const FLASH classic_keycode_matrix_t classic_ctrl_matrix = {
-  [0] = { 0x03, 0x03, 0x03, 0x03, 0x7F, 0x03, 0x03, 0x03 },
-  [1] = { 0x03, 0x03, 0x03, 0x03, 0x02, 0x03, 0x03, 0x03 },
-  [2] = { 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03 },
-  [3] = { 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03 },
-  [4] = { 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03 },
-  [5] = { 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03 },
-  [7] = { 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03 },
+  [0] = { ACTION_NOTHING, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
+          ACTION_CTRL, ASCII_BACKSLASH },
+  [1] = { ASCII_DEL, 'P', ';', '/', ASCII_SPACE, 'Z', 'A', 'Q' },
+  [2] = { CLASSIC_ACTION_BREAK, ASCII_COMMA, 'M', 'N', 'B', 'V', 'C', 'X' },
+  [3] = { ACTION_NOTHING, 'K', 'J', 'H', 'G', 'F', 'D', 'S' },
+  [4] = { ACTION_NOTHING, 'I', 'U', 'Y', 'T', 'R', 'E', 'W' },
+  [5] = { ACTION_NOTHING, ACTION_REPEAT, ACTION_CAPS, ASCII_CR, ASCII_LF, 'O', 'L', ASCII_PERIOD },
+  [6] = { ASCII_TILDE, ASCII_RT_SQUARE_BRACE, ASCII_LT_SQUARE_BRACE, '-', ':', ASCII_ZERO, '9',
+          '8' },
+  [7] = { ASCII_AT, '7', '6', '5', '4', '3', '2', '1' },
   ASDF_CLASSIC_DIP_SWITCHES
 };
 
