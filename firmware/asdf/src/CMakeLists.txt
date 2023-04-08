@@ -46,8 +46,8 @@ message("**********************\n\n")
 
 set (PROJECT_BIN_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
-configure_file(${PROJECT_SRC_DIR}/Arch/asdf_arch_${ARCH}.h ${CMAKE_CURRENT_BINARY_DIR}/asdf_arch.h COPYONLY)
-configure_file(${PROJECT_SRC_DIR}/Arch/asdf_arch_${ARCH}.c ${CMAKE_CURRENT_BINARY_DIR}/asdf_arch.c COPYONLY)
+configure_file(${PROJECT_SRC_DIR}/Arch/asdf_arch_${ARCH_FAMILY}.h ${CMAKE_CURRENT_BINARY_DIR}/asdf_arch.h COPYONLY)
+configure_file(${PROJECT_SRC_DIR}/Arch/asdf_arch_${ARCH_FAMILY}.c ${CMAKE_CURRENT_BINARY_DIR}/asdf_arch.c COPYONLY)
 configure_file(${PROJECT_SRC_DIR}/asdf_keymap_setup.c.in  ${CMAKE_CURRENT_BINARY_DIR}/asdf_keymap_setup.c)
 configure_file(${PROJECT_SRC_DIR}/asdf_keymap_setup.h.in  ${CMAKE_CURRENT_BINARY_DIR}/asdf_keymap_setup.h)
 
@@ -74,6 +74,8 @@ list (APPEND SOURCES
   Keymaps/asdf_keymap_apple2_caps.c
   Keymaps/asdf_keymap_apple2_add_map.c
   Keymaps/asdf_keymap_sol.c
+  Keymaps/asdf_keymap_ace1000.c
+  Keymaps/asdf_keymap_ace1000_add_map.c
   main.c
   )
 

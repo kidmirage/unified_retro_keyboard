@@ -25,6 +25,7 @@
 
 
 #include "asdf_print.h"
+#include "asdf_hook.h"
 #include "asdf_keymaps.h"
 #include "asdf_virtual.h"
 #include "asdf_modifiers.h"
@@ -46,7 +47,8 @@
 // COMPLEXITY:
 //
 
-void apple2_id_message(void) {
+void apple2_id_message(void)
+{
   asdf_print("[Keymap: Apple 2 (u/l case)]");
 }
 

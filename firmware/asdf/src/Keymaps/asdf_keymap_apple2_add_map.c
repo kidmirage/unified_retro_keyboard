@@ -88,7 +88,7 @@ const FLASH apple_keycode_matrix_t apple_shift_matrix = {
    [4] = { ACTION_NOTHING, 'I', 'U', 'Y', 'T', 'R', 'E', 'W' },
    [5] = { ACTION_NOTHING, ACTION_NOTHING, ACTION_NOTHING, ASCII_CR, ASCII_AT, 'O', 'L', '>' },
    [6] = { ACTION_NOTHING, ACTION_NOTHING, APPLE_ACTION_CLEAR, '=',
-           '*',         ASCII_ZERO,           ASCII_RT_PAREN,       ASCII_LT_PAREN },
+           '*', ASCII_AT, ASCII_RT_PAREN, ASCII_LT_PAREN },
    [7] = { APPLE_LEFT_ARROW, ASCII_SINGLE_QUOTE, '&', '%', '$', '#', ASCII_DOUBLE_QUOTE, '!' },
    ASDF_APPLE2_DIP_SWITCHES
 };
@@ -102,7 +102,7 @@ const FLASH apple_keycode_matrix_t apple_caps_shift_matrix = {
    [4] = { ACTION_NOTHING, 'I', 'U', 'Y', 'T', 'R', 'E', 'W' },
    [5] = { ACTION_NOTHING, ACTION_NOTHING, ACTION_NOTHING, ASCII_CR, ACTION_REPEAT, 'O', 'L', '>' },
    [6] = { ACTION_NOTHING, ACTION_NOTHING, APPLE_ACTION_CLEAR, '=',
-           '*', ASCII_ZERO, ASCII_RT_PAREN, ASCII_LT_PAREN },
+           '*', ACTION_NOTHING, ASCII_RT_PAREN, ASCII_LT_PAREN },
    [7] = { APPLE_LEFT_ARROW, ASCII_SINGLE_QUOTE, '&', '%', '$', '#', ASCII_DOUBLE_QUOTE, '!' },
    ASDF_APPLE2_DIP_SWITCHES
 };
@@ -123,23 +123,22 @@ const FLASH apple_keycode_matrix_t apple_caps_matrix = {
 const FLASH apple_keycode_matrix_t apple_ctrl_matrix = {
    [0] = { ACTION_CAPS, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING,
            ACTION_NOTHING, ASCII_ESC,    ACTION_CTRL,  APPLE_RIGHT_ARROW },
-   [1] = { ACTION_NOTHING, ASCII_CTRL_P, ACTION_NOTHING, ACTION_NOTHING,
+   [1] = { ACTION_NOTHING, ASCII_CTRL_P, ACTION_NOTHING, ASCII_BACKSLASH,
            ASCII_SPACE,    ASCII_CTRL_Z, ASCII_CTRL_A,   ASCII_CTRL_Q },
-   [2] = { ACTION_NOTHING, ASCII_COMMA, ASCII_CTRL_M, ASCII_CTRL_N,
+   [2] = { ACTION_NOTHING, ASCII_LT_SQUARE_BRACE, ASCII_CTRL_M, ASCII_CTRL_N,
            ASCII_CTRL_B, ASCII_CTRL_V, ASCII_CTRL_C, ASCII_CTRL_X },
    [3] = { ACTION_NOTHING, ASCII_CTRL_K, ASCII_CTRL_J, ASCII_CTRL_H,
            ASCII_CTRL_G, ASCII_CTRL_F, ASCII_CTRL_D, ASCII_CTRL_S },
    [4] = { ACTION_NOTHING, ASCII_CTRL_I, ASCII_CTRL_U, ASCII_CTRL_Y,
            ASCII_CTRL_T, ASCII_CTRL_R, ASCII_CTRL_E, ASCII_CTRL_W },
    [5] = { ACTION_NOTHING, ACTION_NOTHING, ACTION_NOTHING,  ASCII_CR,
-           ACTION_REPEAT,      ASCII_CTRL_O,   ASCII_CTRL_L, ACTION_NOTHING },
-   [6] = { ACTION_NOTHING, ACTION_NOTHING, APPLE_ACTION_RESET,   ACTION_NOTHING,
-           ACTION_NOTHING, ACTION_FN_10, ACTION_FN_9, ACTION_FN_8 },
-   [7] = { APPLE_LEFT_ARROW, ACTION_FN_7, ACTION_FN_6, ACTION_FN_5,
-            ACTION_FN_4, ACTION_FN_3, ACTION_FN_2, ACTION_FN_1 },
+           ACTION_REPEAT,      ASCII_CTRL_O,   ASCII_CTRL_L, ASCII_RT_SQUARE_BRACE },
+   [6] = { ACTION_NOTHING, ACTION_NOTHING, APPLE_ACTION_RESET,  ASCII_UNDERSCORE,
+           ACTION_NOTHING, ACTION_FN_10, ASCII_RT_CURLY_BRACE, ASCII_LT_CURLY_BRACE },
+   [7] = { ASCII_DEL, ASCII_GRAVE_ACCENT, ASCII_CARET, ACTION_FN_5,
+            ACTION_FN_4, ACTION_FN_3, ASCII_TILDE, ASCII_VERT_BAR },
    ASDF_APPLE2_DIP_SWITCHES
 };
-
 
 
 static const apple_keycode_matrix_t *apple_maps[] = {
@@ -152,13 +151,7 @@ static const apple_keycode_matrix_t *apple_maps[] = {
 
 void applesoft_keyboard_test(void)
 {
-    asdf_print("10 GET A$\r");
-    asdf_print("20 A = ASC(A$)\r");
-    asdf_print("30 IF A < 32 THEN A$=\"CTL+\"+CHR$(A + 64)\r");
-    asdf_print("40 ?\"'\";A$;\"' = \";A:\r");
-    asdf_print("50 IF A <> 3 GOTO 10\r");
-    asdf_print("60 END\rRUN\r");
-
+    asdf_print("10GETA$(0):A=ASC(A$(0)):A$(1)=\"CTL+\"+CHR$(A + 64):?\"'\";A$(A<32);\"' = \";A:IFA<>3GOTO10\r");
 }
 
 void apple_add_map(const apple_map_index_t map_index,

@@ -51,6 +51,7 @@ Download the latest release of the firmware [here](https://osiweb.github.io/unif
   * (2): Apple 2 ASCII keyboard (upper/lower)
   * (3): Apple 2 ASCII keyboard (standard all caps)
   * (4): Sol-20 ASCII keyboard
+  * (5): Franklin Ace-100 keyboard (Thanks to Chris Ryu)
 
 * Debounce and Repeat functions: The main keyscan logic implements key
   debouncing. Multiple keys may be debounced simultaneously using a separate
@@ -73,6 +74,23 @@ Download the latest release of the firmware [here](https://osiweb.github.io/unif
 
 ## Compiling and configuration
 
+### Changing project name and version number.
+
+- Edit the file "CMakeLists.txt"
+- You will see a "project" section near the beginning of the file.
+
+        project("asdf"
+            VERSION 1.6.3
+            DESCRIPTION "A customizable keyboard matrix controller for retrocomputers"
+            LANGUAGES C)
+
+- You can change the project name from "asdf" to whatever you like, and change the version number as you see fit.  These values will be used to name the resulting hex files, and also to name the download links in the GitHub page, if you choose to create one. 
+
+        project("my-keyboard"
+            VERSION 1.0
+            DESCRIPTION "My customized keyboard firmware"
+            LANGUAGES C)
+
 ### building using github actions:
 
 If you have commit privileges to the repository, or if you have your own fork,
@@ -82,7 +100,14 @@ then push a commit to one of the following branches to trigger an automatic buil
 - asdf-build-test
 
 This will generate a github page with downloadable hex files. You will find the
-link to the github page in the "Actions" tab of the repository.  
+link to the github page in the "Actions" tab of the repository. 
+
+You will also need to activate GitHub pages.  To do this:
+
+- Click "Settings" at the top of this GitHub page, then along the menu bar on the left, select "Pages" in the "Code and Actions Section."
+- In the "Build and deployment" section, select "Deploy from Branch"
+- The "Branch" section will display a message that github pages is disabled.  Select the branch "gh-pages" from the dropdown, and the "disabled" message will be replaced with a message that the site is being built from "gh-pages".  Once you have triggered a build, you will see a message at the top of this page with a link to the live page. 
+- 
 
 ### build using the make-build-dirs.sh script.
 
