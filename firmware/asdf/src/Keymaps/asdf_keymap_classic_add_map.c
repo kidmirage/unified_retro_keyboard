@@ -69,8 +69,8 @@ typedef asdf_keycode_t classic_keycode_matrix_t[CLASSIC_NUM_ROWS][CLASSIC_NUM_CO
 
 
 const FLASH classic_keycode_matrix_t classic_plain_matrix = {
-  [0] = { ACTION_NOTHING, 0xf1, 0xf2, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
-          0xf4, ASCII_BACKSLASH },
+  [0] = { ACTION_NOTHING, 128, 129, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
+          130, ASCII_BACKSLASH },
   [1] = { ASCII_DEL, 'p', ';', '/', ASCII_SPACE, 'z', 'a', 'q' },
   [2] = { CLASSIC_ACTION_BREAK, ASCII_COMMA, 'm', 'n', 'b', 'v', 'c', 'x' },
   [3] = { ACTION_NOTHING, 'k', 'j', 'h', 'g', 'f', 'd', 's' },
@@ -111,16 +111,22 @@ const FLASH classic_keycode_matrix_t classic_caps_matrix = {
 };
 
 const FLASH classic_keycode_matrix_t classic_ctrl_matrix = {
-  [0] = { ACTION_NOTHING, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING, ASCII_ESC, ASCII_TAB,
-          ACTION_CTRL, ASCII_BACKSLASH },
-  [1] = { ASCII_DEL, 'P', ';', '/', ASCII_SPACE, 'Z', 'A', 'Q' },
-  [2] = { CLASSIC_ACTION_BREAK, ASCII_COMMA, 'M', 'N', 'B', 'V', 'C', 'X' },
-  [3] = { ACTION_NOTHING, 'K', 'J', 'H', 'G', 'F', 'D', 'S' },
-  [4] = { ACTION_NOTHING, 'I', 'U', 'Y', 'T', 'R', 'E', 'W' },
-  [5] = { ACTION_NOTHING, ACTION_REPEAT, ACTION_CAPS, ASCII_CR, ASCII_LF, 'O', 'L', ASCII_PERIOD },
-  [6] = { ASCII_TILDE, ASCII_RT_SQUARE_BRACE, ASCII_LT_SQUARE_BRACE, '-', ':', ASCII_ZERO, '9',
-          '8' },
-  [7] = { ASCII_AT, '7', '6', '5', '4', '3', '2', '1' },
+  [0] = { ACTION_NOTHING, ACTION_SHIFT, ACTION_SHIFT, ACTION_NOTHING, ASCII_DEL, ASCII_TAB,
+          ACTION_CTRL, 0x1c },
+  [1] = { ACTION_NOTHING, ASCII_CTRL_P, ACTION_NOTHING, ACTION_NOTHING, 0x02, ASCII_CTRL_Z,
+          ASCII_CTRL_A, ASCII_CTRL_Q },
+  [2] = { CLASSIC_ACTION_RESET, ASCII_COMMA, ASCII_CTRL_M, ASCII_CTRL_N, ASCII_CTRL_B, ASCII_CTRL_V,
+          ASCII_CTRL_C, ASCII_CTRL_X },
+  [3] = { ACTION_NOTHING, ASCII_CTRL_K, ASCII_CTRL_J, ASCII_CTRL_H, ASCII_CTRL_G, ASCII_CTRL_F,
+          ASCII_CTRL_D, ASCII_CTRL_S },
+  [4] = { ACTION_NOTHING, ASCII_CTRL_I, ASCII_CTRL_U, ASCII_CTRL_Y, ASCII_CTRL_T, ASCII_CTRL_R,
+          ASCII_CTRL_E, ASCII_CTRL_W },
+  [5] = { ACTION_NOTHING, ACTION_REPEAT, ACTION_CAPS, ASCII_CR, ASCII_LF, ASCII_CTRL_O,
+          ASCII_CTRL_L, ACTION_NOTHING },
+  [6] = { ACTION_NOTHING, 0x1d, ASCII_DEL, ACTION_NOTHING, ACTION_NOTHING, ACTION_FN_10,
+          ACTION_FN_9, ACTION_FN_8 },
+  [7] = { ASCII_NULL, ACTION_FN_7, ACTION_FN_6, ACTION_FN_5, ACTION_FN_4, ACTION_FN_3, ACTION_FN_2,
+          ACTION_FN_1 },
   ASDF_CLASSIC_DIP_SWITCHES
 };
 
